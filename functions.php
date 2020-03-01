@@ -1,49 +1,8 @@
 <?php 
 
-/*** Schema ***/
-global $wpdb;
-$wpdb->query("
-	CREATE TABLE IF NOT EXISTS cz_signups (
-		id int(11) NOT NULL auto_increment,
-		content TEXT default '',
-		PRIMARY KEY (id)
-	)
-");
-
 /*** Includes ***/
 
-include_once(dirname(__FILE__).'/acf/main.php');
-
-/*** API Endpoints ***/
-
-if($_SERVER['REQUEST_URI'] === '/posts'){
-	include_once(dirname(__FILE__).'/endpoints/posts.php');
-	exit(1);
-}
-elseif(preg_match('/^\/page-meta\/(\w+)$/', $_SERVER['REQUEST_URI'], $matches)){
-	include_once(dirname(__FILE__).'/endpoints/page-meta.php');
-	exit(1);
-}
-else if($_SERVER['REQUEST_URI'] === '/members'){
-	include_once(dirname(__FILE__).'/endpoints/members.php');
-	exit(1);
-}
-else if($_SERVER['REQUEST_URI'] === '/signup'){
-	include_once(dirname(__FILE__).'/endpoints/signup.php');
-	exit(1);
-}
-else if($_SERVER['REQUEST_URI'] === '/list'){
-	include_once(dirname(__FILE__).'/endpoints/list.php');
-	exit(1);
-}
-else if($_SERVER['REQUEST_URI'] === '/test'){
-	include_once(dirname(__FILE__).'/test.php');
-	exit(1);
-}
-else if($_SERVER['REQUEST_URI'] === '/long'){
-	include_once(dirname(__FILE__).'/long.php');
-	exit(1);
-}
+include_once(dirname(__FILE__).'/acf/loader.php');
 
 /*** Configurations ***/
 
