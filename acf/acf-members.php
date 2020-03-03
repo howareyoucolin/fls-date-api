@@ -260,6 +260,25 @@ acf_add_local_field_group(array(
 			'append' => '',
 			'maxlength' => '',
 		),
+		array(
+			'key' => 'field_5daaad5796b23',
+			'label' => 'Backup Password',
+			'name' => 'backup_password',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'prepend' => '',
+			'append' => '',
+			'maxlength' => '',
+		),
 	),
 	'location' => array(
 		array(
